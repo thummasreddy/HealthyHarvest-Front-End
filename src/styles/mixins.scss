@@ -1,0 +1,9 @@
+// Define your SCSS mixins here
+@mixin clearfix {
+    &::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+  

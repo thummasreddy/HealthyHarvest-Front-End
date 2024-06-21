@@ -1,0 +1,242 @@
+$font-family-base: 'Arial', sans-serif;
+$primary-color: #30acff;
+$secondary-color: #546edb;
+$background-color: #f7f7f7;
+$text-color: #2e2e33;
+$hover-color: #546edb;
+
+/* Reset box-sizing for all elements */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/* Basic styles */
+html {
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: $font-family-base;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: $text-color;
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $text-color;
+  transition: color 200ms cubic-bezier(.55, 0, .1, 1);
+
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+main {
+  margin-top: 10rem;
+  text-align: center;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  height: 7rem;
+  padding: 0 15px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.site-logo {
+  font-size: 3rem;
+  color: $primary-color;
+  transition: color 200ms cubic-bezier(.55, 0, .1, 1);
+
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+/* Navigation bar styles */
+.navbar {
+  background-color: #fff; /* Keep it clean and simple */
+  margin-bottom: 20px;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  color: $primary-color;
+  transition: color 200ms cubic-bezier(.55, 0, .1, 1);
+
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+
+  .nav-item {
+    margin: 0 15px;
+
+    .nav-link {
+      font-size: 1.6rem;
+      color: $text-color;
+      transition: color 200ms cubic-bezier(0.55, 0, 0.1, 1);
+
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+}
+
+/* okayNav styles */
+body.okayNav-loaded {
+  overflow-x: hidden;
+}
+
+.okayNav:not(.loaded) {
+  visibility: hidden;
+  user-select: none;
+}
+
+.okayNav ul {
+  float: left;
+}
+
+.okayNav a {
+  color: $text-color;
+  font-size: 1.6rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+}
+
+.okayNav__nav--visible {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.okayNav__nav--visible li {
+  display: inline-block;
+}
+
+.okayNav__nav--visible a {
+  display: block;
+  transition: color 200ms cubic-bezier(0.55, 0, 0.1, 1);
+  padding: 15px;
+
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+.okayNav__nav--invisible {
+  position: fixed;
+  top: 70px;
+  bottom: 0;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  background: #fff;
+}
+
+.okayNav__nav--invisible a {
+  background: #fff;
+  width: 240px;
+  display: block;
+  padding: 15px;
+}
+
+.okayNav__nav--invisible.nav-left {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.okayNav__nav--invisible.nav-right {
+  right: 0;
+  transform: translateX(100%);
+}
+
+.okayNav__nav--invisible.transition-enabled {
+  transition: transform 400ms cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.okayNav__nav--invisible.nav-open {
+  transform: translateX(0);
+}
+
+/* Kebab icon */
+.okayNav__menu-toggle {
+  position: relative;
+  transition: transform 400ms cubic-bezier(0.55, 0, 0.1, 1);
+  cursor: pointer;
+  width: 40px;
+  height: 20px;
+  float: left;
+  z-index: 1;
+  top: 15px;
+}
+
+.okayNav__menu-toggle.okay-invisible {
+  position: absolute;
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+.okayNav__menu-toggle span {
+  display: block;
+  position: absolute;
+  margin: auto;
+  height: 4px;
+  width: 4px;
+  background: $text-color;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.okayNav__menu-toggle span:nth-child(1) {
+  top: 0;
+}
+
+.okayNav__menu-toggle span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.okayNav__menu-toggle span:nth-child(3) {
+  bottom: 0;
+}
+
+.okayNav__menu-toggle.icon--active {
+  transform: rotate(90deg);
+
+  span {
+    background: $hover-color;
+  }
+}
