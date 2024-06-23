@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Healthy-Haevest": {
+    "Healthy-Harvest": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/healthy-haevest",
+            "outputPath": "dist/healthy-harvest",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -30,6 +30,8 @@
                 "glob": "**/*",
                 "input": "public"
               }
+
+              
             ],
             "styles": [
               "src/styles.scss"
@@ -69,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Healthy-Haevest:build:production"
+              "buildTarget": "Healthy-Harvest:build:production"
             },
             "development": {
-              "buildTarget": "Healthy-Haevest:build:development"
+              "buildTarget": "Healthy-Harvest:build:development"
             }
           },
           "defaultConfiguration": "development"
