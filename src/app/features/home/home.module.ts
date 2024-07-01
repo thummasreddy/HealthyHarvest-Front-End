@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from '../home/home.component';
-import { HomeRoutingModule } from '../home/home-routing.module';
-import { SharedModule } from '../../shared/shared.module';
+import { HomeComponent } from './home.component';
+import { HomeRoutingModule } from './home-routing.module';
+import { SliderModule } from '../home_slider/slider_module'; // Import SliderModule
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [
+    HomeComponent
+  ],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    SharedModule
+    SliderModule // Add SliderModule to imports
   ]
 })
 export class HomeModule { }
