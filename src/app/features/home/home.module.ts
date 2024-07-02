@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
+import { SliderComponent } from '../home_slider/slider_component'; // Adjust the path if necessary
 import { HomeRoutingModule } from './home-routing.module';
-import { SliderModule } from '../home_slider/slider_module'; // Import SliderModule
+import { CarouselModule } from 'ngx-bootstrap/carousel'; // Import CarouselModule
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    SliderComponent
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    SliderModule // Add SliderModule to imports
+    CarouselModule // Import CarouselModule
   ]
 })
 export class HomeModule { }

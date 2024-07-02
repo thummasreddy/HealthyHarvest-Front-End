@@ -1,22 +1,26 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-
+import { BrowserModule } from '@angular/platform-browser';  // Ensure BrowserModule is imported for web apps
+import { HttpClientModule } from '@angular/common/http';  // Ensure HttpClientModule is imported
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { CarouselModule } from 'ngx-bootstrap/carousel'; // Correctly import CarouselModule
 
-// Do not import standalone components here
+import { AppComponent } from './app.component'; // Ensure AppComponent is imported
 
 @NgModule({
   declarations: [
-    // No declarations for standalone components
+    AppComponent // Declare AppComponent
   ],
   imports: [
-    HttpClientModule,
+    BrowserModule, // BrowserModule should be imported for web apps
+    HttpClientModule, // Import HttpClientModule
     AppRoutingModule,
     CoreModule,
     SharedModule,
+    CarouselModule.forRoot() // Import CarouselModule and call forRoot()
   ],
   providers: [],
+  bootstrap: [AppComponent] // Ensure AppComponent is bootstrapped
 })
 export class AppModule { }
